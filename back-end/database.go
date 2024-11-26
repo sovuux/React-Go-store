@@ -8,7 +8,7 @@ import (
 
 var db *pgxpool.Pool
 
-func initDb() {
+func InitDB() {
 	dsn := "postgres://postgres:admin@localhost:5432/react_go_store?sslmode=disable"
 
 	var err error
@@ -20,7 +20,7 @@ func initDb() {
 	log.Println("Connected to database")
 }
 
-func closeDb() {
+func CloseDB() {
 	if db != nil {
 		db.Close()
 	}
